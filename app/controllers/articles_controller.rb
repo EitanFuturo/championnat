@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all 
+
+    @articles = Article.all.reject { |article| article.user.user_group != current_user.user_group if article.user.present?}
   end
   
   def show
@@ -16,7 +17,9 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)  
+    @article = Article.new(article_params)
+    @article.user = current_user
+
     if @article.save
       redirect_to @article            
     else
