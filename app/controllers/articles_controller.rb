@@ -1,7 +1,10 @@
 class ArticlesController < ApplicationController
   def index
-
-    @articles = Article.all.reject { |article| article.user.user_group != current_user.user_group if article.user.present?}
+    if current_user.admin
+      @articles = Article.all
+    else
+      @articles = Article.all.reject { |article| article.user.user_group != current_user.user_group if article.user.present?}
+    end
   end
   
   def show
@@ -45,7 +48,8 @@ class ArticlesController < ApplicationController
   end
 
   private
-    def article_params
-      params.require(:article).permit(:title, :text)
-    end
+
+  def article_params
+    params.require(:article).permit(:title, :text)
+  end
 end
