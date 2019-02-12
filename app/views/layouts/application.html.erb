@@ -15,11 +15,11 @@
   <body>
 
   <% if user_signed_in? %>
-    <p>
+    <p class="session">
       <%= link_to('Cerrar sesión', destroy_user_session_path, method: :delete) %>
     </p>
   <% else %>
-    <p>
+    <p class="session">
       <%= link_to('Login', new_user_session_path)  %>
     </p>
   <% end %>

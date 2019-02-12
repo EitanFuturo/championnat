@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    background-color: #2E2F30;
+    height: 100vh;
+    color: white !important;
+    padding: 2em !important;
+}
+
+.link {
+    text-decoration: underline;
+}
+
+.link a:hover {
+    color: #BBBBBB;
+    transition: 500ms;
+}
+
+.session a {
+    text-decoration: none;
+    color: white;
+}
+
+.session a:hover {
+    color: #BBBBBB;
+    transition: 500ms;
+}
+
+.dark {
+    background-color: #2E2F30;
+}
+
+smoothly-dark {
+    background-color: #363636;
+}
+
