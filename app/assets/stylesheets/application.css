@@ -14,10 +14,13 @@
  *= require_self
  */
 
+* {
+    color: white !important;
+}
+
 body {
     background-color: #2E2F30;
     height: 100vh;
-    color: white !important;
     padding: 2em !important;
 }
 

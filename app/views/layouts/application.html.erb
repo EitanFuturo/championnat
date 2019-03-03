@@ -15,7 +15,7 @@
   <body>
 
   <% if user_signed_in? %>
-    <p class="session">
+    <p class="session is-pulled-right link">
       <%= link_to('Cerrar sesión', destroy_user_session_path, method: :delete) %>
     </p>
   <% else %>
