@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require trix
  */
 
 * {
@@ -49,5 +50,10 @@ body {
 
 smoothly-dark {
     background-color: #363636;
+}
+
+trix-toolbar .button_group button.icon,
+trix-toolbar .button_group input[type=button].icon {
+    display: initial;
 }
 

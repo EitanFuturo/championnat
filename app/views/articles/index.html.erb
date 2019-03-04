@@ -16,7 +16,7 @@
     <% @articles.each do |article| %>
       <tr class="columns">
         <td class="column is-half"><%= article.title %></td>
-        <td class="column is-half"><%= article.text %></td>
+        <td class="column is-half"><%= article.text.html_safe %></td>
         <td class="column is-one-quarter link"><%= link_to 'Show', article_path(article) %></td>
         <td class="column is-one-quarter link"><%= link_to 'Edit', edit_article_path(article) %></td>
         <td class="column is-one-quarter link"><%= link_to 'Destroy', article_path(article),

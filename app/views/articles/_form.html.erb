@@ -20,11 +20,13 @@
     <%= form.text_field :title %>
   </p>
 
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
-
+  <section class="section columns">
+    <p>
+      <%= form.label :text %><br>
+      <%= form.hidden_field :title, id: :article_title %>
+      <trix-editor input="article_title"></trix-editor>
+    </p>
+  </section>
   <p>
     <%= form.submit %>
   </p>
