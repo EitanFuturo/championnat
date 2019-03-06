@@ -16,7 +16,7 @@
  */
 
 * {
-    color: white !important;
+    color: white;
 }
 
 body {
@@ -52,8 +52,25 @@ smoothly-dark {
     background-color: #363636;
 }
 
+trix-editor, trix-toolbar, div.button_row {
+    border-radius: 5px;
+    background-color: #F6F6F6;
+    box-shadow: -5px 5px 5px 0px #AAAAAA;
+}
+
+input, trix-editor div:nth-child(n), trix-editor blockquote, trix-editor h1, trix-editor del, trix-editor em, trix-editor li {
+    color: black !important;
+}
+
+
 trix-toolbar .button_group button.icon,
 trix-toolbar .button_group input[type=button].icon {
     display: initial;
 }
+
+p > strong, a, h1, th {
+    color: white !important;
+}
+
+
 
