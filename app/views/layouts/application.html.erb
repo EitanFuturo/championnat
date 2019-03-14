@@ -24,6 +24,12 @@
     </p>
   <% end %>
 
+  <% if current_user.admin? %>
+    <p class="is-pulled-right link">
+      <%= link_to('Dashboard', '/articles/admin_view') %>
+    </p>
+  <% end %>
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 

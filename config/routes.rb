@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
+  get '/articles/admin_view', to: 'articles#admin_view'
   resources :articles, :user_groups
 
   root 'welcome#index'

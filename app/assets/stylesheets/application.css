@@ -21,12 +21,13 @@
 
 body {
     background-color: #2E2F30;
-    height: 100vh;
+    min-height: 100vh;
     padding: 2em !important;
 }
 
 .link {
     text-decoration: underline;
+    padding: 5px;
 }
 
 .link a:hover {

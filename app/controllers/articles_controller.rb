@@ -47,6 +47,10 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
+  def admin_view
+    render 'admin'
+  end
+
   private
 
   def article_params
