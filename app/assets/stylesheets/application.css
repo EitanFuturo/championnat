@@ -49,8 +49,8 @@ body {
     background-color: #2E2F30;
 }
 
-smoothly-dark {
-    background-color: #363636;
+.smoothly-dark {
+    background-color: #363636 !important;
 }
 
 trix-editor, trix-toolbar, div.button_row {
@@ -73,5 +73,25 @@ p > strong, a, h1, th {
     color: white !important;
 }
 
+.box {
+    background-color: #363636 !important;
+}
+
+.white-text {
+    color: white !important;
+}
+
+.table h2:hover{
+    color: black !important;
+    transition: all 200ms;
+}
+
+th, td {
+    padding: 0 !important;
+}
+
+table h2 {
+    padding: 8px 12px;
+}
 
 
