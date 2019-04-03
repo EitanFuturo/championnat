@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   get '/articles/admin_view', to: 'articles#admin_view'
   resources :articles, :user_groups
 
+  namespace :admin do
+    resources :championship_types
+  end
+
   root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
