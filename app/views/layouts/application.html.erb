@@ -9,12 +9,18 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" rel="stylesheet">
+    <link href="../../assets/stylesheets/application.css" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   </head>
 
   <body>
 
   <% if user_signed_in? %>
+    <% if current_user.admin? %>
+      <p class="is-pulled-right link">
+        <%= link_to('Dashboard', '/articles/admin_view') %>
+      </p>
+    <% end %>
     <p class="session is-pulled-right link">
       <%= link_to('Cerrar sesión', destroy_user_session_path, method: :delete) %>
     </p>
@@ -23,6 +29,7 @@
       <%= link_to('Login', new_user_session_path)  %>
     </p>
   <% end %>
+
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
