@@ -20,7 +20,7 @@ gem 'devise'
 
 gem 'trix'
 
-gem 'slim', '~> 4.0', '>= 4.0.1'
+gem 'slim'
 
 gem 'rails-assets-bulma', source: 'https://rails-assets.org'
 
