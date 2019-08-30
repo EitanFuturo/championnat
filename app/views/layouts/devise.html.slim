@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title Championnat
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+    link href="../../assets/stylesheets/application.css" rel="stylesheet"
+    script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+
+  body
+    .hero
+      .hero-body
+        .columns
+          .column.is-half.is-offset-one-quarter
+            .has-text-centered.medium-margin-bottom
+              h1.title.is-1.main-title Le Championnat
+            .card.smoothly-dark
+              .card-content
+                = yield
