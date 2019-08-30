@@ -1,4 +1,4 @@
-h2.title.is-3.has-text-white Inscribite
+h2.title.is-3.has-text-white Ingresá
 
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
 
@@ -17,7 +17,7 @@ h2.title.is-3.has-text-white Inscribite
       .field
         .control
           = f.check_box :remember_me
-          = f.label :remember_me, class: "label has-text-white"
+          = f.label 'Recordame', class: "label has-text-white"
 
   .actions.has-text-centered
     = f.submit "ATR", class: "button is-medium dark has-text-white"

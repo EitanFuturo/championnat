@@ -1,4 +1,4 @@
-h2 Sign up
+h2.title.is-3.has-text-white Inscribite
 
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = devise_error_messages!
@@ -6,26 +6,26 @@ h2 Sign up
   .field
     = f.label :email, class: "label has-text-white"
     .control
-      = f.email_field :email, autofocus: true, autocomplete: "email"
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: "input"
 
   .field
     = f.label :password, class: "label has-text-white"
     - if @minimum_password_length
     .control
-      = f.password_field :password, autocomplete: "new-password"
+      = f.password_field :password, autocomplete: "new-password", class: "input"
       em.help #{@minimum_password_length} characters minimum
 
   .field
     = f.label :password_confirmation, class: "label has-text-white"
     .control
-      = f.password_field :password_confirmation, autocomplete: "new-password"
+      = f.password_field :password_confirmation, autocomplete: "new-password", class: "input"
 
-  .select
+  .field
     = f.label 'User Group (optional)', class: "label has-text-white"
-    .control
-      = f.select(:user_group_id, UserGroup.all.collect{|a| [ a.name, a.id] }, include_blank: "No group yet :/", class: "has-text-white")
+    .control.select
+      = f.select(:user_group_id, UserGroup.all.collect{|a| [ a.name, a.id] }, include_blank: "No group yet :/", class: "select is-medium has-text-white")
 
-  .actions
-    = f.submit "Sign up"
-
-= render "devise/shared/links"
+  .actions.has-text-centered
+    = f.submit "Sign up", class: "button is-medium dark has-text-white"
+.has-text-centered.medium-margin-top
+  = render "devise/shared/links"
