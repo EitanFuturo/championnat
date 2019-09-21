@@ -49,10 +49,9 @@ class ArticlesController < ApplicationController
 
   def admin_view
     @user_groups = UserGroup.all
-    @users = User.order(:email)
+
     # TODO: should be replaced with actual dates that the Admin should select
     @week_days = %w(Monday Tuesday Wednesday Thursday Friday Saturday Sunday)
-    render 'admin_view'
   end
 
   private
