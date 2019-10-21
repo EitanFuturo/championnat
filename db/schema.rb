@@ -25,16 +25,16 @@ ActiveRecord::Schema.define(version: 2019_10_15_042231) do
   end
 
   create_table "championship_types", force: :cascade do |t|
-    t.string "name"
-    t.integer "length"
+    t.string "name", null: false
+    t.integer "length", null: false
     t.integer "min_characters"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "championships", force: :cascade do |t|
-    t.date "start_date"
-    t.bigint "championship_type_id"
+    t.date "start_date", null: false
+    t.bigint "championship_type_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["championship_type_id"], name: "index_championships_on_championship_type_id"
