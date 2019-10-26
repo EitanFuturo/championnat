@@ -7,11 +7,11 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  get '/articles/admin_view', to: 'articles#admin_view'
   resources :articles, :user_groups
 
   namespace :admin do
-    resources :championship_types
+    get 'championships/admin_view', to: 'championships#admin_view', as: :championships_admin_view
+    resources :championship_types, :championships
   end
 
   root 'welcome#index'
