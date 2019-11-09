@@ -8,24 +8,25 @@ h1.title Dashboard
 table.table.smoothly-dark
   thead
     - @user_groups.each do |group|
-      th colspan="#{group.users.length + 2}"
+      th colspan="#{group.users.length + 3}"
         h2.subtitle.white-text = group.name
       tbody
         tr
           th
           th
+          th
             - group.users.each do |user|
-              th
+              th.has-text-centered
                 = user.email
                 | &nbsp;
-          - championship_week_days.each_with_index do |day, idx|
+          - championship_week_days.each_with_index do |date, idx|
             tr
-              td
+              td.has-text-centered
                 = idx + 1
-              td
-                p = @week_days[idx]
+              td.has-text-centered
+                = date.strftime('%A')
+              td.has-text-centered
+                = date
               - group.users.length.times do
-                td
-          /!
-            td
-              p Date when Championship model is done
+                td.has-text-centered 1
+                /* TODO: Make User method that searches an article given a specific date. */

@@ -15,9 +15,6 @@ module Admin
 
     def admin_view
       @user_groups = UserGroup.all
-
-      # TODO: should be replaced with actual dates that the Admin should select
-      @week_days = %w(Monday Tuesday Wednesday Thursday Friday Saturday Sunday)
     end
   end
 end
