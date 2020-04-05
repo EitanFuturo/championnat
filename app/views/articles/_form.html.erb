@@ -17,7 +17,7 @@
 
   <p>
     <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: 'input', id: 'text-title' %>
   </p>
 
   <section class="section columns">
@@ -28,7 +28,7 @@
     </p>
   </section>
   <p>
-    <%= form.submit %>
+    <%= form.submit 'Cargar texto', {class: 'button'} %>
   </p>
 
 <% end %>
