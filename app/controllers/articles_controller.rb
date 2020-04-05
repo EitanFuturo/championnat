@@ -5,6 +5,8 @@ class ArticlesController < ApplicationController
     else
       @articles = Article.all.reject { |article| article.user.user_group != current_user.user_group if article.user.present?}
     end
+
+    @user ||= User.all
   end
   
   def show
