@@ -1,12 +1,12 @@
-
-<div class="box smoothly-dark">
+<div class="section" style="width: 60%;">
   <p>
     <span class="title white-text"><%= @article.title %></span>
   </p>
-
-  <p>
-    <span class="h2 white-text"><%= @article.text.html_safe %></span>
-  </p>
+  <div class="box smoothly-dark">
+    <p>
+      <span class="h2 white-text"><%= @article.text.html_safe %></span>
+    </p>
+  </div>
 </div>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
