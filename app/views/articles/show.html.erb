@@ -1,13 +1,8 @@
-
-<button class="button is-pulled-right" type="button"
-        onclick="lightMode();">
-  El rincón de Maga
-</button>
-<div class="section" id="section" style="width: 60%;">
+<div class="section" style="width: 60%;">
   <p>
     <span class="title white-text"><%= @article.title %></span>
   </p>
-  <div id="box" class="box smoothly-dark">
+  <div class="box smoothly-dark">
     <p>
       <span class="h2 white-text"><%= @article.text.html_safe %></span>
     </p>
@@ -16,15 +11,3 @@
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
-
-<script>
-  function lightMode (){
-      debugger;
-      document.getElementById('body').style.backgroundColor= 'white';
-      document.getElementById('body').style.color= 'black';
-
-      document.getElementById('box').style.backgroundColor= 'white !important;';
-      document.getElementById('box').style.color= 'black';
-
-  }
-</script>
