@@ -4,7 +4,7 @@ html
     title.main-title Championnat
     = csrf_meta_tags
     = csp_meta_tag
-    link rel="icon" type="image/png" href="/assets/logo.jpg"
+    = favicon_link_tag "logo.jpg"
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
@@ -32,9 +32,25 @@ html
             = link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: "button is-dark"
             = link_to 'Login', new_user_session_path, class: "button is-dark"
 
-  p.notice
-    = notice
-  p.alert
-    = alert
+    - if notice.present?
+      .notification.is-success.smoothly-dark
+        .button.delete.smoothly-dark
+        = notice
+    - if alert.present?
+      .notification.is-success.smoothly-dark
+        .button.delete.smoothly-dark
+        = alert
 
     = yield
+
+javascript:
+
+    document.addEventListener('DOMContentLoaded', () => {
+        (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+            var $notification = $delete.parentNode;
+
+            $delete.addEventListener('click', () => {
+                $notification.parentNode.removeChild($notification);
+            });
+        });
+    });
