@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
       @articles = Article.all.reject { |article| article.user.user_group != current_user.user_group if article.user.present?}
     end
 
-    @user ||= User.all
+    @users ||= User.where(user_group: current_user.user_group)
   end
   
   def show

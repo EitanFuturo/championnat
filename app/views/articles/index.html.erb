@@ -5,7 +5,7 @@
     <%= link_to "Cargar texto de #{current_user.name}", new_article_path, class: 'subtitle link'%>
   </div>
 
-  <% @user.each do |user| %>
+  <% @users.each do |user| %>
     <div class="panel is-dark">
       <h2 style="font-size: 1.5em;"><%= user.name %></h2>
       <% user.articles.each do |article| %>
