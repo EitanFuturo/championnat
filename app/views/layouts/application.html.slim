@@ -4,6 +4,7 @@ html
     title.main-title Championnat
     = csrf_meta_tags
     = csp_meta_tag
+    link rel="icon" type="image/png" href="/assets/logo.jpg"
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
@@ -12,17 +13,24 @@ html
     script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
 
   body#body
+    nav.navbar.is-dark
+      .navbar-brand
+        .navbar-item style="width: 50px;"
+          figure.image
+            = image_tag "logo.jpg", class: "is-rounded"
+      | &nbsp;
+      - if user_signed_in?
+        - if current_user.admin?
+          .navbar-menu
+            .buttons
+              = link_to 'Dashboard', admin_championships_admin_view_path, class: "button is-dark"
+              = link_to 'Textos', articles_path, class: "button is-dark"
 
-  - if user_signed_in?
-    - if current_user.admin?
-      p.is-pulled-right.link
-        = link_to 'Dashboard', admin_championships_admin_view_path
-
-    p.session.is-pulled-right.link
-      = link_to 'Cerrar sesión', destroy_user_session_path, method: :delete
-
-    p.session
-      = link_to 'Login', new_user_session_path
+      .navbar-end
+        .navbar-item
+          .buttons
+            = link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: "button is-dark"
+            = link_to 'Login', new_user_session_path, class: "button is-dark"
 
   p.notice
     = notice

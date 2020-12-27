@@ -36,6 +36,14 @@ body {
   background-color: #363636 !important;
 }
 
+.button.is-dark {
+  border: solid 1px white;
+}
+
+.button.is-dark:hover {
+  border: solid 2px white;
+}
+
 trix-editor, trix-toolbar, div.button_row {
   border-radius: 5px;
   background-color: #F6F6F6;
