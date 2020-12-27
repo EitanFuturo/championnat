@@ -24,6 +24,8 @@ gem 'slim'
 
 gem 'rails-assets-bulma', source: 'https://rails-assets.org'
 
+gem 'webpacker'
+
 
 
 # Use CoffeeScript for .coffee assets and views
