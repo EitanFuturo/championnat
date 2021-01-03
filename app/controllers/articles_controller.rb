@@ -1,14 +1,6 @@
 class ArticlesController < ApplicationController
-  def index
-    if current_user.admin
-      @articles = Article.all
-    else
-      @articles = Article.all.reject { |article| article.user.user_group != current_user.user_group if article.user.present?}
-    end
+  before_action :initialize_users, only: :index
 
-    @users ||= User.where(user_group: current_user.user_group)
-  end
-  
   def show
     @article = Article.find(params[:id])
   end 
@@ -51,6 +43,10 @@ class ArticlesController < ApplicationController
 
 
   private
+
+  def initialize_users
+    @users ||= User.where(user_group: current_user.user_group)
+  end
 
   def article_params
     params.require(:article).permit(:title, :text)

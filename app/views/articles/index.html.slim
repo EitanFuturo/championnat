@@ -1,0 +1,15 @@
+
+  h1 class="title" Lista de Textos
+
+  div class="navbar is-dark"
+    = link_to "Cargar texto de #{current_user.name}", new_article_path, class: 'subtitle button is-dark'
+
+  - @users.each do |user|
+    div class="panel is-dark"
+      h2 style="font-size: 1.5em;" = user.name
+      - if user.articles.any?
+        - user.articles.each do |article|
+          h3 class="link" = link_to "#{article.title}", article_path(article)
+      - else
+          h3
+            i No hay textos cargados para este usuario.
