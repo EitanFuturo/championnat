@@ -24,7 +24,7 @@
     <p>
       <%= form.label :text %><br>
       <%= form.hidden_field :text, id: :article_text %>
-      <trix-editor input="article_text"></trix-editor>
+      <trix-editor input="article_text" data-infopanel-target="source" data-action="input->infopanel#getValues"></trix-editor>
     </p>
   </section>
   <p>
