@@ -7,8 +7,17 @@ export default class extends Controller {
     this.outputTarget.textContent = 'Hello, Stimulus!'
   }
 
-  //TODO: parcear el html para que quede sólo el texto y poder contar, caracteres, etc.
   getValues() {
-    console.log(this.sourceTarget.innerHTML)
+    //console.log(this.sourceTarget.innerHTML)
+    console.log(this.parse(this.sourceTarget.innerHTML))
+  }
+
+  //TODO: corregir método para que deje espacios con el enter. (hint: ver bien qué html agrega con los enter.)
+  parse(text) {
+    const regex = /(<([^>]+)>)/ig
+
+    //text.replace("<div><br></div>", " ")
+    text = text.replace(regex, "")
+    return text.replace("&nbsp;", " ")
   }
 }
