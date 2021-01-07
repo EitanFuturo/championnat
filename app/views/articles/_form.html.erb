@@ -21,11 +21,16 @@
   </p>
 
   <section class="section columns">
-    <p>
-      <%= form.label :text %><br>
-      <%= form.hidden_field :text, id: :article_text %>
-      <trix-editor input="article_text" data-infopanel-target="source" data-action="input->infopanel#getValues"></trix-editor>
-    </p>
+    <div class="column">
+      <p>
+        <%= form.label :text %><br>
+        <%= form.hidden_field :text, id: :article_text %>
+        <trix-editor input="article_text" data-infopanel-target="source" data-action="input->infopanel#getValues"></trix-editor>
+      </p>
+    </div>
+    <div id="info-panel" class="column">
+      <%= render 'info_panel' %>
+    </div>
   </section>
   <p>
     <%= form.submit 'Cargar texto', {class: 'button'} %>

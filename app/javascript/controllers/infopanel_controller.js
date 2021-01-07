@@ -1,23 +1,21 @@
 import { Controller } from "stimulus"
+import HTMLParser from "../utils/html_parser"
 
 export default class extends Controller {
   static targets = ["source", "output" ]
 
   connect() {
-    this.outputTarget.textContent = 'Hello, Stimulus!'
+    this.outputTarget.textContent = '3000 caracteres restantes.'
   }
 
   getValues() {
-    //console.log(this.sourceTarget.innerHTML)
-    console.log(this.parse(this.sourceTarget.innerHTML))
+    const parsedText = HTMLParser.parse(this.sourceTarget.innerHTML)
+    this.showCharactersCount(parsedText)
   }
 
-  //TODO: corregir método para que deje espacios con el enter. (hint: ver bien qué html agrega con los enter.)
-  parse(text) {
-    const regex = /(<([^>]+)>)/ig
-
-    text = text.replaceAll("<br>", " ")
-    text = text.replaceAll(regex, "")
-    return text.replaceAll("&nbsp;", " ")
+  //TODO: Ver por qué a veces no cuenta bien los caracteres con enters. Chequear el parser.
+  showCharactersCount(text) {
+    this.outputTarget.textContent = `${3000 - text.length} caracteres restantes.`
   }
+
 }
