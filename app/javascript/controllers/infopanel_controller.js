@@ -16,8 +16,8 @@ export default class extends Controller {
   parse(text) {
     const regex = /(<([^>]+)>)/ig
 
-    //text.replace("<div><br></div>", " ")
-    text = text.replace(regex, "")
-    return text.replace("&nbsp;", " ")
+    text = text.replaceAll("<br>", " ")
+    text = text.replaceAll(regex, "")
+    return text.replaceAll("&nbsp;", " ")
   }
 }
